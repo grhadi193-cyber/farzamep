@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-Hosted Peyda Font Family (assets.zip) */
+@font-face {
+  font-family: 'Peyda';
+  src: url('/fonts/Peyda-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Peyda';
+  src: url('/fonts/Peyda-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Peyda';
+  src: url('/fonts/Peyda-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Peyda';
+  src: url('/fonts/Peyda-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Peyda';
+  src: url('/fonts/Peyda-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --af-canvas: #102333;
+  --af-surface: #1E3A72;
+  --af-surface-deep: #152B56;
+  --af-accent: #FF7A00;
+  --af-alert: #ED2F42;
+  --af-text: #F8FAFC;
+  --af-muted: #94A3B8;
+  --af-success: #10B981;
+  --af-border: rgba(255, 255, 255, 0.1);
+}
+
+html,
+body {
+  font-family: 'Peyda', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  background-color: #102333;
+  color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+/* Strictly enforce tabular numerals & LTR embedding on financial figures, codes, IBANs, Jalali dates */
+.num-ltr {
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-feature-settings: "tnum" 1;
+}
+
+.mono-ltr {
+  font-family: 'IBM Plex Mono', 'Peyda', monospace;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Custom subtle scrollbars for dark enterprise tables */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1d2b;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.28);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 122, 0, 0.65);
+}
+
+/* Official Iranian Financial Statement & Voucher Print Styling */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-sheet {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-sheet * {
+    color: #000000 !important;
+    border-color: #111827 !important;
+    background-color: transparent !important;
+  }
+
+  .print-sheet th {
+    background-color: #f3f4f6 !important;
+    font-weight: 700 !important;
+  }
+
+  .print-sheet table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  .print-sheet th,
+  .print-sheet td {
+    border: 1px solid #374151 !important;
+    padding: 5px 7px !important;
+  }
+
+  .print-invert-logo {
+    filter: brightness(0) saturate(100%);
+  }
+}

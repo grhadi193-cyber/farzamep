@@ -1,0 +1,6 @@
+{
+  "name": "آتی فرزام ERP | سامانه جامع حسابداری دوطرفه هوشمند",
+  "description": "سامانه جامع حسابداری دوطرفه و انطباق مالیاتی بازرگانی توسعه تجارت آتی فرزام ایرانیان (شناسه ملی ۱۴۰0۴۳۱۳۰۸۸) مبتنی بر استانداردهای حسابداری ایران، Supabase و Muse.ai MCP",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
